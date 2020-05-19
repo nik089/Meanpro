@@ -1,0 +1,23 @@
+<h1 style="text-align:center; color: #088ae7;">Feedback</h1>
+<table class="table">
+  <tr>
+    <td colspan="6" align="center">
+    </td>
+  </tr>
+  <tr>
+    <th>Sno</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+    <th>Message</th>
+    <th>Date</th>
+  </tr>
+  <tr *ngFor="let c of cntdata;let i=index">
+    <th>{{i+1}}</th>
+    <th>{{c.yn}}</th>
+    <th>{{c.email}}</th>
+    <th>{{c.cn}}</th>
+    <th>{{c.msg}}</th>
+    <th>{{c.created_at|date}}</th>
+  </tr>
+</table>

@@ -1,0 +1,32 @@
+<h1 style="text-align:center; color: #2245f1;">Product</h1>
+<table class="table">
+  <tr>
+    <td colspan="8" align="center">
+      <a routerLink="../addproduct" class="btn btn-danger">Add Product</a>
+    </td>
+  </tr>
+  <tr>
+    <th>S.no</th>
+    <th>Cname</th>
+    <th>Pname</th>
+    <th>Price</th>
+    <th>Image</th>
+    <th>Features</th>
+    <th>Date</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let c of proData;let i=index">
+    <th>{{i+1}}</th>
+    <th>{{c.cname}}</th>
+    <th>{{c.pname}}</th>
+    <th>{{c.price}}</th>
+    <th><img src="http://localhost:8899/{{c.image}}" width=50 height=50 /></th>
+    <th>{{c.features}}</th>
+    <th>{{c.created_at|date}}</th>
+    <th>
+      <input type="button" value="Edit" class="btn btn-info" (click)="editCat(c._id)" />
+      <input type="button" value="Delete" class="btn btn-danger" (click)="deletecat(c._id)">
+    </th>
+  </tr>
+
+</table>

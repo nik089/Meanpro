@@ -1,0 +1,28 @@
+<h2 style="text-align:center; color: rgb(222, 15, 250);" >Change Password</h2>
+  <form [formGroup]="myForm" (ngSubmit)="chPass()">
+    <div *ngIf="errMsg" class="alert alert-danger">
+      {{errMsg}}
+    </div>
+    <div class="form-group">
+      <label>Old Password</label>
+      <input type="op" formControlName="op" class="form-control" placeholder="Enter Old Password"/>
+      <div *ngIf="myForm.controls.op.invalid && myForm.controls.op.touched" class="alert alert-danger">
+        <div *ngIf="myForm.controls.op.errors.required"> New Password is required </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>New Password</label>
+      <input type="np" formControlName="np" class="form-control" placeholder="Enter New Password"/>
+      <div *ngIf="myForm.controls.np.invalid && myForm.controls.np.touched" class="alert alert-danger">
+        <div *ngIf="myForm.controls.np.errors.required">Old Password is required </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Change Password</label>
+      <input type="cp" formControlName="cp" class="form-control" placeholder="Enter Change Password"/>
+      <div *ngIf="myForm.controls.cp.invalid && myForm.controls.cp.touched" class="alert alert-danger">
+        <div *ngIf="myForm.controls.cp.errors.required"> Change Password is required </div>
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-success" [disabled]="myForm.invalid"/>
+  </form>

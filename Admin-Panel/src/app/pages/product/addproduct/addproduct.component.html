@@ -1,0 +1,36 @@
+<h1 style="text-align:center; color: rgb(21, 157, 42)">Add Product</h1>
+<form [formGroup]="myForm" (ngSubmit)="addpro()">
+  <div class="form-group">
+    <label>Cname:</label>
+    <select formControlName="cname" name="cname">
+      <option *ngFor="let c of catData" value="{{c.cname}}">{{c.cname}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Pname</label>
+    <input type="text" class="form-control" formControlName="pname" />
+    <div *ngIf="myForm.controls.pname.invalid && myForm.controls.pname.touched" class="alert alert-danger">
+      <div *ngIf="myForm.controls.pname.errors.required"> Pname is required </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Price</label>
+    <input type="text" class="form-control" formControlName="price" />
+    <div *ngIf="myForm.controls.price.invalid && myForm.controls.price.touched" class="alert alert-danger">
+      <div *ngIf="myForm.controls.price.errors.required"> Price is required </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Image</label>
+    <input type="file" class="form-control" (change)="myImage($event)" />
+  </div>
+  <div class="form-group">
+    <label>Features</label>
+    <input type="text" class="form-control" formControlName="features" />
+    <div *ngIf="myForm.controls.features.invalid && myForm.controls.features.touched" class="alert alert-danger">
+      <div *ngIf="myForm.controls.features.errors.required"> Features is required </div>
+    </div>
+  </div>
+
+  <input type="submit" value="Submit" class="btn btn-success" [disabled]="myForm.invalid">
+</form>

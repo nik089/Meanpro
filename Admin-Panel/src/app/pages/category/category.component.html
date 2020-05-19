@@ -1,0 +1,25 @@
+<h1 style="text-align:center; color: #2245f1;">Category</h1>
+<table class="table">
+  <tr>
+    <td colspan="5" align="center">
+      <a routerLink="../addcategory" class="btn btn-danger">Add Category</a>
+    </td>
+  </tr>
+  <tr>
+    <th>S.no</th>
+    <th>Cname</th>
+    <th>Image</th>
+    <th>Date</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let c of catData;let i=index">
+    <td>{{i+1}}</td>
+    <td>{{c.cname}}</td>
+    <td><img src="http://localhost:8899/{{c.image}}" width=50 height=50 /></td>
+    <td>{{c.created_at|date}}</td>
+    <td>
+      <input type="button" value="Edit" class="btn btn-info" (click)="editCat(c._id)" />
+      <input type="button" value="Delete" class="btn btn-danger" (click)="deleteCat(c._id)" />
+    </td>
+  </tr>
+</table>

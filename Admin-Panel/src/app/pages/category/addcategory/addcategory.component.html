@@ -1,0 +1,38 @@
+<div *ngIf="!cid">
+  <h1 style="text-align: center; color: rgb(21, 157, 42)">Add Cotegory</h1>
+  <form [formGroup]="myForm" (ngSubmit)="addcat()">
+    <div class="form-group">
+      <label>Cname</label>
+      <input type="text" class="form-control" formControlName="cname" />
+      <div *ngIf="myForm.controls.cname.invalid && myForm.controls.cname.touched" class="alert alert-danger">
+        <div *ngIf="myForm.controls.cname.errors.required"> Cname is required </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Image</label>
+      <input type="file" class="form-control" (change)="myImage($event)" />
+    </div>
+    <input type="submit" value="Add Category" class="btn btn-success" [disabled]="myForm.invalid">
+  </form>
+</div>
+<div *ngIf="cid">
+  <h1 style="text-align: center; color: rgb(20, 133, 209)">Edit Cotegory</h1>
+  <form [formGroup]="myForm" (ngSubmit)="editcat()">
+    <div *ngIf="sussMsg" class="alert alert-success">
+      {{sussMsg}}
+    </div>
+    <div *ngIf="errMsg" class="alert alert-danger">
+      {{errMsg}}
+    </div>
+    <div class="form-group">
+      <label>Cname</label>
+      <input type="text" class="form-control" formControlName="cname" />
+    </div>
+    <div class="form-group">
+      <label>Image</label>
+      <input type="file" class="form-control" (change)="myImage($event)" />
+      <img src="http://localhost:8899/{{cdata.image}}" width=50 height=50 *ngIf="cdata" />
+    </div>
+    <input type="submit" value="Edit Category" class="btn btn-success" [disabled]="myForm.invalid">
+  </form>
+</div>
