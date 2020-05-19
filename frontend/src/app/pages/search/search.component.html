@@ -1,0 +1,37 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <app-sidebar></app-sidebar>
+      <div class="col-sm-9 padding-right">
+        <h4 class="head">Search Products</h4>
+        <div class="top_grid2" *ngIf="proData else error">
+          <div class="col-md-4 top_grid1-box1" *ngFor="let p of proData">
+            <a href="#">
+              <div class="grid_1">
+                <div class="b-link-stroke b-animate-go  thickbox">
+                  <div class="b-bottom-line"></div>
+                  <div class="b-top-line"></div>
+                  <img src="http://localhost:8899/{{ p.image }}" class="img-responsive" width="200" height="250"
+                    alt="" />
+                </div>
+                <div class="grid_2">
+                  <p>{{ p.pname }}</p>
+                  <ul class="grid_2-bottom" style="display:flex">
+                    <li class="grid_2-left">
+                      <p>Rs.{{ p.price }}</p>
+                    </li>
+                    <li class="grid_2-right">
+                      <a href="javascript:void(0)" class="btn btn-default add-to-cart" (click)="addcart(p._id)"><i
+                          class="fa fa-shopping-cart"></i>Add to cart</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <ng-template #error>No search found</ng-template>
+      </div>
+    </div>
+  </div>
+</section>

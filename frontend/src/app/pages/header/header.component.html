@@ -1,0 +1,59 @@
+<div class="header">
+  <div class="header_top">
+    <div class="container">
+      <div class="logo left">
+        <a href="index.html"><img src="assets/images/logo.png" alt="" /></a>
+      </div>
+      <ul class="shopping_grid">
+        <li><a routerLink="/cart"><i class="fa fa-shopping-cart"></i> Cart <span
+              *ngIf="cartItem>0">({{cartItem}})</span></a></li>
+        <li>
+          <a routerLink="/myorder">MyOrder</a>
+        </li>
+        <li>
+          <a routerLink="/sign"><i class="fa fa-user"></i>Welcome:{{Uid}}</a>
+          <div class="row" *ngIf="userData">
+            <h4>{{ userData.name }}</h4>
+            <img src="{{ userData.photoUrl }}">
+          </div>
+        </li>
+        <!-- <img src="{{userData.photoUrl}}"> -->
+        <li class="nav-item">
+          <a class="nav-link" href="javascript:void()" (click)="logout()"><i class="fa fa-sign-out"></i>Logout</a>
+        </li>
+        <div class="clearfix"> </div>
+      </ul>
+      <div class="clearfix"> </div>
+    </div>
+  </div>
+
+  <div class="h_menu4">
+    <!-- start h_menu4 -->
+    <div class="container">
+      <a class="nav">
+        <li class="active"><a routerLink="/">Home</a></li>
+        <li><a routerLink="/About">About Us</a></li>
+        <li><a routerLink="/contact">Contact Us</a></li>
+        <li class="dropdown"><a href="#">Category<i class="fa fa-angle-down"></i></a>
+          <ul role="menu" class="sub-menu">
+            <li *ngFor="let c of catData"><a routerLink="/category/{{c.cname}}">{{c.cname|titlecase}}</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="/register">Registration</a></li>
+      </a>
+    </div><!-- end h_menu4 -->
+  </div>
+  <div>
+    <div class="col-sm-12" align="center">
+      <p>Search Items <i class="fa fa-search"></i></p>
+      <div class="input-group mb-6">
+        <input type="search" placeholder="What're you searching for?" aria-describedby="button-addon5"
+          class="form-control" [(ngModel)]="search">
+        <a href="javascript:void(0)"></a>
+        <div class="input-group-append">
+          <button type="button" class="btn btn-primary" (click)="onSearch()"><i class="fa fa-search"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

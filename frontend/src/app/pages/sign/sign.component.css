@@ -1,0 +1,43 @@
+.signIn {
+  display: grid;
+  border: 2px solid rgb(20, 11, 11);
+  margin: 0 250px;
+  padding: 2% 5%;
+  border-radius: 50px;
+  width: 500px;
+}
+
+.button {
+  width: 96%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group input,
+textarea {
+  border-color: aqua;
+}
+
+.zzz {
+  width: 96%;
+}
+
+.btn-social {
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn {
+  display: inline-block;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 17px;
+  width: 96%;
+}

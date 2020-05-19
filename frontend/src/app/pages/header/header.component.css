@@ -1,0 +1,18 @@
+.header-nav {
+  text-align: left;
+  padding-top: 35px;
+}
+
+html,
+body {
+  font-size: 60%;
+  background: black;
+}
+
+.input-group .form-control {
+  position: relative;
+  z-index: 2;
+  float: right;
+  width: 500px;
+  margin-bottom: 0;
+}

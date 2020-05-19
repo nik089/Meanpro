@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Frontend</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
+  <link href="assets/css/style.css" rel='stylesheet' type='text/css' />
+  <link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700,800,900' rel='stylesheet'
+    type='text/css'>
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-social.css" rel="stylesheet">
+
+
+  <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+        auto: true,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+
+  </script>
+</head>
+
+<body>
+  <script type="text/javascript" src="assets/js/jquery-1.11.1.min.js"></script>
+  <script src="assets/js/responsiveslides.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!-- <script src="assets/js/price-range.js"></script> -->
+  <app-root></app-root>
+</body>
+
+</html>

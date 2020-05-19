@@ -1,0 +1,38 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <app-sidebar></app-sidebar>
+      <div class="col-sm-9 padding-right">
+        <div class="product-details">
+          <!--product-details-->
+          <div class="col-sm-5">
+            <div class="view-product">
+              <img src="http://localhost:8899/{{proData.image}}" alt="" height="400px" width="300px" />
+            </div>
+          </div>
+
+          <div class="col-sm-7">
+            <div class="product-information">
+              <h3>{{proData.cname}} {{proData.pname}}</h3>
+              <h4><b>Price:</b> {{proData.price}} Rs.</h4>
+              <p><b>Product ID:</b> {{proData._id}}</p>
+              <span>
+                <p><b>Features:</b>{{proData.features}}</p>
+                <label>Quantity:</label>
+                <input type="text" value="0" />
+              </span>
+              <p>{{proData.Feature}}</p>
+              <p><b>Availability:</b> In Stock</p>
+              <p><b>Condition:</b> New</p>
+              <p><b>Brand:</b>Fashionpress</p>
+              <button type="button" class="btn btn-primary cart">
+                <i class="fa fa-shopping-cart"></i>
+                Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

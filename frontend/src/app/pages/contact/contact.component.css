@@ -1,0 +1,27 @@
+.contactDiv {
+  display: grid;
+  border: 2px solid rgb(204, 7, 7);
+  margin: 0 250px;
+  padding: 2% 5%;
+  border-radius: 50px;
+  width: 500px;
+}
+
+.button {
+  width: 95%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-group input,
+textarea {
+  border-color: chocolate;
+}
+
+.zzz {
+  width: 96%;
+}

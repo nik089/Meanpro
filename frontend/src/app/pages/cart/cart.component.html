@@ -1,0 +1,49 @@
+<section id="cart_items">
+  <div class="container">
+    <div class="row">
+      <app-sidebar></app-sidebar>
+      <div class="col-sm-9 padding-right">
+        <div class="breadcrumbs">
+          <ol class="breadcrumb">
+            <li class="active"><a routerLink="/">Home</a></li>
+            <li class="active">Shopping Cart</li>
+          </ol>
+        </div>
+        <div class="table-responsive cart_info">
+          <table class="table table-condensed">
+            <thead>
+              <tr class="cart_menu">
+                <td>item</td>
+                <td>Product ID</td>
+                <td>Features</td>
+                <td>Price</td>
+                <td>Total Price</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let c of proData">
+                <td class="cart_product">
+                  <img src="http://localhost:8899/{{c.image}}" alt="" height="100px" width="50px" />
+                </td>
+                <td class="Product_id"> {{c._id}}</td>
+                <td class="cart_description">
+                  <h4>{{c.features}}</h4>
+                </td>
+                <td class="cart_price">
+                  <p>{{c.price}}.00 Rs</p>
+                </td>
+                <td class="cart_total">
+                  <p>{{c.price}}.00 Rs</p>
+                </td>
+                <td class="cart_delete">
+                  <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <input type="button" value="Place Order" class="btn btn-danger" style="text-align: right;" />
+      </div>
+    </div>
+  </div>
+</section>

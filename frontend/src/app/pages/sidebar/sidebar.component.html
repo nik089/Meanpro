@@ -1,0 +1,17 @@
+<div class="col-sm-3">
+  <div class="left-sidebar">
+    <h2>Category</h2>
+    <div class="panel panel-default">
+      <div class="panel-heading" *ngFor="let c of catData">
+        <h4 class="panel-title"><a routerLink="/category/{{c.cname}}">{{c.cname|titlecase}}</a></h4>
+      </div>
+    </div>
+    <div class="price-range">
+      <!--price-range-->
+      <h2>Price Range</h2>
+      <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
+      <button (click)="priceFilter()">Search</button>
+    </div>
+    <!--/price-range-->
+  </div>
+</div>
